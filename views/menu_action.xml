@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+
+
+
+        <record id="patient_action" model="ir.actions.act_window">
+            <field name="name">Patients</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                Click to create a new record.
+                </p>
+                <p>This is a test class developed to learn Openerp.</p>
+            </field>
+        </record>
+        <record id="doctor_action" model="ir.actions.act_window">
+            <field name="name">Doctors</field>
+            <field name="res_model">hr.employee</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                Click to create a new Doctor.
+                </p>
+                <p>This is a test class developed to learn Openerp.</p>
+            </field>
+        </record>
+        <record id="medical_appointment_action" model="ir.actions.act_window">
+            <field name="name">Appointments</field>
+            <field name="res_model">medical.appointment</field>
+            <field name="view_mode">calendar,tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                Click to create a new Appointment.
+                </p>
+                <div class="fa fa-user-md fa-7x" style="color:#00008B;"/>
+                <p>And Also You can Receive Order From Website</p>
+            </field>
+        </record>
+
+
+            
+        <menuitem
+            id="medical_menu"
+            name="Medical App"
+            sequence="-1"/>
+        <menuitem
+            id="medical_appointment_menu"
+            name="Appointments"
+            action="medical_appointment_action"
+            parent="medical_menu"
+            sequence="1"/>  
+        <menuitem
+            id="patient_menu"
+            name="Patients"
+            action="patient_action"
+            parent="medical_menu"
+            sequence="2"/>
+        <menuitem
+            id="doctor_menu"
+            name="Doctors"
+            action="doctor_action"
+            parent="medical_menu"
+            sequence="3"/>
+                
+    
+    </data>
+    
+
+</odoo>

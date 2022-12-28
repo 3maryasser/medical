@@ -15,6 +15,7 @@
         "views/views.xml",
         "data/sequence.xml",
         "views/website_menu.xml",
+        "views/appointment.xml",
     ],
     "application": True,
 }

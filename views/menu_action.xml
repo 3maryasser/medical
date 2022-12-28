@@ -51,6 +51,7 @@
         <menuitem
             id="medical_menu"
             name="Medical App"
+            web_icon="medical,static/description/icon.png"
             sequence="-1"/>
         <menuitem
             id="medical_appointment_menu"

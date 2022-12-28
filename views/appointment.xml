@@ -2,15 +2,107 @@
 <odoo>
 
     <data>
-        <template id="appointment_website_form" name="Appointment" page="True">
+        <template id="appointment_website_form">
             <t t-call="website.layout">
-                <div id="wrap" class="oe_structure oe_empty">
-                    <h1>Here We Go</h1>
+                 <div id="wrap" class="oe_structure oe_empty">
+      <section class="s_picture pb24 o_cc pt72 o_cc1 o_colored_level" data-snippet="s_picture" data-name="Picture" style="background-image: none;">
+        <div class="container">
+          <h2 style="text-align: center;">
+            <font style="font-size: 62px;">Get Your Appointment</font>
+            <br/>
+          </h2>
+          <p style="text-align: center;" class="o_default_snippet_text">Choose a vibrant image and write an inspiring paragraph about it.<br/> It does not have to be long, but it should reinforce your image.</p>
+          <p style="text-align: center;">
+            <br/>
+          </p>
+          <div class="row s_nb_column_fixed">
+            <div class="col-lg-10 offset-lg-1 pb24 o_colored_level" style="text-align: center;">
+              <figure class="figure">
+                <img src="/web/image/636-671f262a/doctor-1797869.png" class="figure-img padding-large img-fluid" alt="" loading="lazy" data-original-title="" title="" aria-describedby="tooltip242309" data-original-id="635" data-original-src="/web/image/635-cb25a952/doctor-1797869.png" data-mimetype="image/png" data-resize-width="undefined"/>
+                <figcaption class="figure-caption text-muted py-3 o_default_snippet_text">Add a caption to enhance the meaning of this image.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="s_website_form pt16 pb16 o_colored_level" data-vcss="001" data-snippet="s_website_form" data-name="Form" style="background-image: none;">
+        <div class="container">
+          <form action="/appointment/form/" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-pre-fill="true" data-success-mode="redirect" data-success-page="/contactus-thank-you" data-model_name="mail.mail">
+            <div class="s_website_form_rows row s_col_no_bgcolor">
+              <div class="form-group s_website_form_field col-12    s_website_form_dnone" data-name="Field">
+                <div class="row s_col_no_resize s_col_no_bgcolor">
+                  <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px !important;">
+                    <span class="s_website_form_label_content"/>
+                  </label>
+                  <div class="col-sm">
+                    <input type="hidden" class="form-control s_website_form_input" name="email_to" value="info@yourcompany.example.com"/>
+                    <div class="s_website_form_field_description small form-text text-muted">
+            Separate email addresses with a comma.
+        </div>
+                  </div>
                 </div>
+              </div>
+              <div class="form-group s_website_form_field col-12 s_website_form_custom s_website_form_required pb8" data-type="char" data-name="Field" data-visibility-condition="" data-visibility-between="">
+                <div class="row s_col_no_resize s_col_no_bgcolor">
+                  <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px !important;" for="omvs8hzphg">
+                    <span class="s_website_form_label_content">Patient Name</span>
+                    <span class="s_website_form_mark"> *</span>
+                  </label>
+                  <div class="col-sm">
+                    <input type="text" class="form-control s_website_form_input" name="patient_name" required="1" data-fill-with="name" id="omvs8hzphg"/>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group s_website_form_field col-12 s_website_form_custom" data-type="tel" data-name="Field" data-visibility-condition="" data-visibility-between="">
+                <div class="row s_col_no_resize s_col_no_bgcolor">
+                  <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px !important;" for="oxwb99uoyy2">
+                    <span class="s_website_form_label_content">Doctor</span>
+                  </label>
+                  <div class="col-sm">
+                    <select name="doc_id" id="doc_id" class="form-control link-style">
+                        <t t-foreach="doc_names" t-as="doc">
+                            <option t-att-value="doc.id">
+                                <t t-esc="doc.name" t-att-value="doc.id"/>
+                            </option>
+                        </t>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div data-visibility-condition="" data-visibility-between="" class="form-group s_website_form_field col-12 s_website_form_model_required" data-type="char" data-name="Field">
+                <div class="row s_col_no_resize s_col_no_bgcolor">
+                  <label class="col-form-label col-sm-auto s_website_form_label " style="width: 200px" for="o4rgcc9st727">
+                    <span class="s_website_form_label_content">Your Email</span>
+                    <span class="s_website_form_mark">   *</span>
+                  </label>
+                  <div class="col-sm">
+                    <input type="text" class="form-control s_website_form_input" name="email" value="" placeholder="" id="o4rgcc9st727"/>
+                  </div>
+                </div>
+              </div>
+              <div data-visibility-condition="" data-visibility-between="" class="form-group s_website_form_field col-12 s_website_form_model_required" data-type="char" data-name="Field">
+                <div class="row s_col_no_resize s_col_no_bgcolor">
+                  <label class="col-form-label col-sm-auto s_website_form_label " style="width: 200px" for="onmbz92rtsrm">
+                    <span class="s_website_form_label_content">Complain</span>
+                    <span class="s_website_form_mark">   *</span>
+                  </label>
+                  <div class="col-sm">
+                    <input type="text" class="form-control s_website_form_input" name="complain" value="" placeholder="" id="onmbz92rtsrm"/>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-12 s_website_form_submit" data-name="Submit Button" data-original-title="" title="" aria-describedby="tooltip57181">
+                <div style="width: 200px !important;" class="s_website_form_label"/>
+                <a href="#" role="button" class="btn btn-primary btn-lg">Submit</a>
+                <span id="s_website_form_result"/>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
             </t>
         </template>
-        
-    
     </data>
     
 
